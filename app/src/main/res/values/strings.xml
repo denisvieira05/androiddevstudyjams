@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EasyMech</string>
+    <string name="app_name">EasyMetrology</string>
     <string name="action_settings">Settings</string>
     <string name="calculate">Calcular</string>
     <string name="converter">Converter</string>

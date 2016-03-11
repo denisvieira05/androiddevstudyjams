@@ -1,4 +1,4 @@
-package com.example.android.easymech;
+package com.example.android.easymetrology;
 
 import org.junit.Test;
 

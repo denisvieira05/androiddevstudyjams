@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.easymech">
+    package="com.example.android.easymetrology">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.android.easymetrology.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,25 +19,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalculateActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.example.android.easymetrology.CalculateActivity"
+            android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name=".ConverterActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.example.android.easymetrology.ConverterActivity"
+            android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name=".LibraryActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.example.android.easymetrology.LibraryActivity"
+            android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
     </application>
 
