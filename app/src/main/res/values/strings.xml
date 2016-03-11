@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EasyMech</string>
+    <string name="action_settings">Settings</string>
+    <string name="calculate">Calcular</string>
+    <string name="converter">Converter</string>
+    <string name="calculate_title">Paquimetro</string>
+    <string name="calculate_desc">Utilize para medir</string>
+    <string name="calculators">Calculadoras</string>
+</resources>
