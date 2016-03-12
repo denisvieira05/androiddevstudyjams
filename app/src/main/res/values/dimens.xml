@@ -14,5 +14,5 @@
     <dimen name="article_subheading">16sp</dimen>
     <dimen name="article_titles">20sp</dimen>
     <dimen name="list_body">14sp</dimen>
-    <dimen name="sub_activitys_headers_height">70dp</dimen>
+    <dimen name="sub_activitys_headers_height">100dp</dimen>
 </resources>

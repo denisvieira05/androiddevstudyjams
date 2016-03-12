@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sub_activitys_headers_height"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:background="@drawable/gradient_green_background"
+            android:paddingLeft="25dp"
+            android:paddingTop="25dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aproximação (Sensibilidade)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="20dp"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calcular a aproximação (também chamada sensibilidade) dos paquímetros" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="60dp"
+            android:paddingTop="30dp"
+            android:paddingRight="60dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Menor valor da escala principal (Fixa)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="15dp"/>
+
+
+            <EditText
+                android:id="@+id/valorEscalaPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:hint="0,0"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Número de divisões do nônio (Vernier)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/valorDivisoesDoNonio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:gravity="center"
+                android:ems="10"
+                android:layout_gravity="center_horizontal" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALCULAR"
+                android:id="@+id/button"
+                android:layout_gravity="center_horizontal"
+                android:onClick="calcApproach"/>
+
+            <TextView
+                android:id="@+id/resultApproach"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="APROXIMAÇÃO\n0mm"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="20dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/approach_lesson"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

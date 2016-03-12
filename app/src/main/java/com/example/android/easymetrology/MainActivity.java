@@ -34,19 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickToCalculate(View v){
         Context context = v.getContext();
-        Intent intent = new Intent(context,CalculateActivity.class);
+        Intent intent = new Intent(context,CalculatorsListActivity.class);
         startActivity(intent);
     }
 
     public void onClickToConverter(View v){
         Context context = v.getContext();
-        Intent intent = new Intent(context,ConverterActivity.class);
+        Intent intent = new Intent(context,ConvertersListActivity.class);
         startActivity(intent);
     }
 
     public void onClickToLibrary(View v){
         Context context = v.getContext();
-        Intent intent = new Intent(context,LibraryActivity.class);
+        Intent intent = new Intent(context,LibraryListActivity.class);
         startActivity(intent);
     }
 

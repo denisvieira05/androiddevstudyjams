@@ -19,22 +19,43 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.easymetrology.CalculateActivity"
+            android:name=".CalculatorsListActivity"
             android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.android.easymetrology.ConverterActivity"
+            android:name=".ToolsActivity"
             android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.android.easymetrology.LibraryActivity"
+            android:name=".ConvertersListActivity"
             android:parentActivityName="com.example.android.easymetrology.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.easymetrology.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LibraryListActivity"
+            android:parentActivityName="com.example.android.easymetrology.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.easymetrology.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CalculateActivity"
+            android:parentActivityName="com.example.android.easymetrology.CalculatorsListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.easymetrology.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ConvertActivity"
+            android:parentActivityName="com.example.android.easymetrology.ConvertersListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.easymetrology.MainActivity" />
