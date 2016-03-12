@@ -87,9 +87,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CALCULAR"
-                android:id="@+id/button"
-                android:layout_gravity="center_horizontal"
-                android:onClick="calcApproach"/>
+                android:id="@+id/calculateApproachButton"
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
                 android:id="@+id/resultApproach"
@@ -97,7 +96,6 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:layout_height="wrap_content"
-                android:text="APROXIMAÇÃO\n0mm"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="20dp"/>
 
