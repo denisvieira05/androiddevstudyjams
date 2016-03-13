@@ -48,8 +48,8 @@ public class ApproachContentFragment extends Fragment {
         EditText valorDivisoesDoNonio = (EditText) getView().findViewById(R.id.valorDivisoesDoNonio);
         EditText valorEscalaPrincipal = (EditText) getView().findViewById(R.id.valorEscalaPrincipal);
 
-        float valorDivisoes = Integer.parseInt(valorDivisoesDoNonio.getText().toString());
-        float valorEscala = Integer.parseInt(valorEscalaPrincipal.getText().toString());
+        float valorDivisoes = Float.parseFloat(valorDivisoesDoNonio.getText().toString());
+        float valorEscala = Float.parseFloat(valorEscalaPrincipal.getText().toString());
 
         float result = valorEscala/valorDivisoes;
 

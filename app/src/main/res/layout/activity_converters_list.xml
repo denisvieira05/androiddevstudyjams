@@ -42,21 +42,13 @@
         android:padding="@dimen/md_keylines"
         android:onClick="onClickToConvert">
 
-
-        <ImageView
-            android:id="@+id/list_avatar"
-            android:layout_width="@dimen/avator_size"
-            android:layout_height="@dimen/avator_size"
-            android:scaleType="centerCrop"
-            android:src="@drawable/mechicon4" />
-
         <TextView
             android:id="@+id/list_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/md_keylines"
             android:layout_toRightOf="@+id/list_avatar"
-            android:text="@string/calculate_title"
+            android:text="Milimetro | Polegada Milesimal"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textSize="@dimen/article_subheading" />
 
@@ -69,13 +61,38 @@
             android:layout_toRightOf="@+id/list_avatar"
             android:textColor="@color/medium_grey"
             android:ellipsize="end"
-            android:singleLine="true"
-            android:text="@string/calculate_desc"
+            android:text="Converta seu valor em Milimetro para Polegada Milesimal"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textSize="@dimen/list_body" />
 
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:paddingTop="25dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/convert_icon2"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Em breve mais conversões"
+            android:textAllCaps="true"
+            android:paddingTop="10dp"
+            android:textColor="#696969"/>
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

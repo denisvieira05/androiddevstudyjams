@@ -2,37 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_converter"
+    android:id="@+id/activity_convert"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sub_activitys_headers_height"
-        android:gravity="left"
-        android:orientation="vertical"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        android:background="@drawable/gradient_green_background"
-        android:paddingLeft="25dp"
-        android:paddingTop="25dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CONVERSIONS TITLE"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20dp"
-            android:textAllCaps="true"/>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Preencha todos os campos e submeta seus valores" />
-
-    </LinearLayout>
 
 
 </LinearLayout>

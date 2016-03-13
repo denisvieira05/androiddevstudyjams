@@ -34,48 +34,32 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="@dimen/md_keylines"
-        android:onClick="onClickToCalculate">
-
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:paddingTop="25dp"
+        android:padding="50dp">
 
         <ImageView
-            android:id="@+id/list_avatar"
-            android:layout_width="@dimen/avator_size"
-            android:layout_height="@dimen/avator_size"
-            android:scaleType="centerCrop"
-            android:src="@drawable/mechicon4" />
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/library_icon"/>
 
         <TextView
-            android:id="@+id/list_title"
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/md_keylines"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:text="@string/calculate_title"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/article_subheading" />
+            android:text="Em breve uma função para guardar seus calculos e conversões"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="#696969"
+            />
 
-        <TextView
-            android:id="@+id/list_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/list_title"
-            android:layout_marginLeft="@dimen/md_keylines"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:textColor="@color/medium_grey"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="@string/calculate_desc"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/list_body" />
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </LinearLayout>
