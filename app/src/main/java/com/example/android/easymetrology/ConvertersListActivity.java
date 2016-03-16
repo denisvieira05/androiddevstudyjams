@@ -48,10 +48,16 @@ public class ConvertersListActivity extends AppCompatActivity{
 //                String title = (String) obj.get("title");
 //                String desc = (String) obj.get("description");
 
+                // When clicked, show a toast with the TextView text
+                ConverterItem converter = (ConverterItem) av.getItemAtPosition(position);
+//                Toast.makeText(getApplicationContext(),
+//                        "Clicked on Row: " + converter.getTitle(),
+//                        Toast.LENGTH_LONG).show();
 
                 Bundle params = new Bundle();
-                params.putString("title", "TITULO");
-                params.putString("desc", "DESCRIÇÃO");
+                params.putString("title", converter.getTitle());
+                params.putString("desc", converter.getDescription());
+
 
                 Intent intentOnClick = new Intent(context,ConvertActivity.class);
                 intentOnClick.putExtras(params);
