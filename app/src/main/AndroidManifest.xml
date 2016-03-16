@@ -26,13 +26,6 @@
                 android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name=".ToolsActivity"
-            android:parentActivityName="com.example.android.easymetrology.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.easymetrology.MainActivity" />
-        </activity>
-        <activity
             android:name=".ConvertersListActivity"
             android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data

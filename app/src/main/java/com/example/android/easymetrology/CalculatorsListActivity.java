@@ -26,6 +26,9 @@ public class CalculatorsListActivity extends AppCompatActivity {
     }
 
     public void onClickToCalculate(View v){
+
+
+
         Context context = v.getContext();
         Intent intent = new Intent(context,CalculateActivity.class);
         startActivity(intent);

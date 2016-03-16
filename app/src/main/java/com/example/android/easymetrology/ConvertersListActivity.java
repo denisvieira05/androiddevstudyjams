@@ -5,22 +5,87 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * Created by denisvieira on 11/03/16.
  */
-public class ConvertersListActivity extends AppCompatActivity {
+public class ConvertersListActivity extends AppCompatActivity{
+
+    public static final int CONSTANTE_TELA_1 = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.android.easymetrology.R.layout.activity_converters_list);
+        populateConvertersList();
+    }
+
+    private void populateConvertersList() {
+        // Construct the data source
+        ArrayList<ConverterItem> arrayOfconverters = ConverterItem.getConverters();
+
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,converters);
+
+        // Create the adapter to convert the array to views
+        ConverterItemListAdapter adapter = new ConverterItemListAdapter(this,arrayOfconverters);
+
+        // Attach the adapter to a ListView
+        ListView lv = (ListView) findViewById(R.id.converters_list);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> av, View v, int position, long id) {
+
+                Context context = v.getContext();
+                Intent intent;
+
+//                HashMap<ConverterItem, Object> obj = (HashMap<ConverterItem, Object>) av.getItemAtPosition(position);
+//                String title = (String) obj.get("title");
+//                String desc = (String) obj.get("description");
+
+
+                Bundle params = new Bundle();
+                params.putString("title", "TITULO");
+                params.putString("desc", "DESCRIÇÃO");
+
+                Intent intentOnClick = new Intent(context,ConvertActivity.class);
+                intentOnClick.putExtras(params);
+                startActivityForResult(intentOnClick, CONSTANTE_TELA_1);
+
+//                switch (position) {
+//                    case 0:
+//                        intent = new Intent(context, ConvertActivity.class);
+//                        startActivity(intent);
+//                    case 1:
+//                        intent = new Intent(context, ConvertActivity.class);
+//                        startActivity(intent);
+//                }
+//                Context context = v.getContext();
+//                Intent intent = new Intent(context, ConvertActivity.class);
+//                context.startActivity(intent);
+            }
+        });
+
     }
 
     public void onClickToConvert(View v){
+
+        TextView title = (TextView) findViewById(R.id.list_title);
+        TextView desc = (TextView) findViewById(R.id.list_desc);
+
+        Bundle params = new Bundle();
+        params.putString("title", title.getText().toString());
+        params.putString("desc", desc.getText().toString());
+
         Context context = v.getContext();
         Intent intent = new Intent(context,ConvertActivity.class);
-        startActivity(intent);
+        intent.putExtras(params);
+        startActivityForResult(intent, CONSTANTE_TELA_1);
     }
 
 }

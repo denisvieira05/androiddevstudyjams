@@ -34,39 +34,13 @@
 
     </LinearLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ListView
+        android:id="@+id/converters_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:orientation="vertical"
-        android:padding="@dimen/md_keylines"
-        android:onClick="onClickToConvert">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/list_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/md_keylines"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:text="Milimetro | Polegada Milesimal"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/article_subheading" />
-
-        <TextView
-            android:id="@+id/list_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/list_title"
-            android:layout_marginLeft="@dimen/md_keylines"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:textColor="@color/medium_grey"
-            android:ellipsize="end"
-            android:text="Converta seu valor em Milimetro para Polegada Milesimal"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/list_body" />
-
-
-    </RelativeLayout>
+    </ListView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,13 +56,14 @@
             android:src="@drawable/convert_icon2"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Em breve mais conversões"
             android:textAllCaps="true"
             android:paddingTop="10dp"
-            android:textColor="#696969"/>
+            android:textColor="#696969"
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
