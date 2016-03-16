@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -42,11 +41,6 @@ public class ConvertersListActivity extends AppCompatActivity{
             public void onItemClick(AdapterView<?> av, View v, int position, long id) {
 
                 Context context = v.getContext();
-                Intent intent;
-
-//                HashMap<ConverterItem, Object> obj = (HashMap<ConverterItem, Object>) av.getItemAtPosition(position);
-//                String title = (String) obj.get("title");
-//                String desc = (String) obj.get("description");
 
                 // When clicked, show a toast with the TextView text
                 ConverterItem converter = (ConverterItem) av.getItemAtPosition(position);
@@ -55,43 +49,19 @@ public class ConvertersListActivity extends AppCompatActivity{
 //                        Toast.LENGTH_LONG).show();
 
                 Bundle params = new Bundle();
+
+                params.putInt("id", converter.getId());
                 params.putString("title", converter.getTitle());
                 params.putString("desc", converter.getDescription());
-
 
                 Intent intentOnClick = new Intent(context,ConvertActivity.class);
                 intentOnClick.putExtras(params);
                 startActivityForResult(intentOnClick, CONSTANTE_TELA_1);
 
-//                switch (position) {
-//                    case 0:
-//                        intent = new Intent(context, ConvertActivity.class);
-//                        startActivity(intent);
-//                    case 1:
-//                        intent = new Intent(context, ConvertActivity.class);
-//                        startActivity(intent);
-//                }
-//                Context context = v.getContext();
-//                Intent intent = new Intent(context, ConvertActivity.class);
-//                context.startActivity(intent);
             }
         });
 
     }
 
-    public void onClickToConvert(View v){
-
-        TextView title = (TextView) findViewById(R.id.list_title);
-        TextView desc = (TextView) findViewById(R.id.list_desc);
-
-        Bundle params = new Bundle();
-        params.putString("title", title.getText().toString());
-        params.putString("desc", desc.getText().toString());
-
-        Context context = v.getContext();
-        Intent intent = new Intent(context,ConvertActivity.class);
-        intent.putExtras(params);
-        startActivityForResult(intent, CONSTANTE_TELA_1);
-    }
 
 }

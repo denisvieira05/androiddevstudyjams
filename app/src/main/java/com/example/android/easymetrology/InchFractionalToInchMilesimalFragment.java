@@ -12,25 +12,22 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 /**
- * Created by denisvieira on 13/03/16.
+ * Created by denisvieira on 16/03/16.
  */
-public class MillimeterToInchMIlesimalContentFragment extends Fragment {
-
+public class InchFractionalToInchMilesimalFragment extends Fragment{
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstaceState){
-        View view = inflater.inflate(R.layout.fragment_millimeter_to_inch_milesimal,null);
+        View view = inflater.inflate(R.layout.fragment_inch_fractional_to_inch_milesimal,null);
 
-//        TextView textv = (TextView) view.findViewById(R.id.textViewCaliperRule);
-//        textv.setText("Frament TESTE");
 
-        Button button = (Button) view.findViewById(R.id.convertMillimeterToInchButton);
+        Button button = (Button) view.findViewById(R.id.convertButton);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 TextView resultView = (TextView) getView().findViewById(R.id.result);
-                double result = calcMillimeterToInchMIlesimal();
+                double result = calcInchFractionalToMillimeter();
 
                 DecimalFormat numberFormat = new DecimalFormat("##.###");
 
@@ -41,14 +38,16 @@ public class MillimeterToInchMIlesimalContentFragment extends Fragment {
         return (view);
     }
 
-    public double calcMillimeterToInchMIlesimal(){
+    public double calcInchFractionalToMillimeter(){
 
-        EditText millimeterEditText = (EditText) getView().findViewById(R.id.millimeterValue);
+        EditText numeratorEditText = (EditText) getView().findViewById(R.id.valueToConvertNumerator);
+        EditText denominatorEditText = (EditText) getView().findViewById(R.id.valueToConvertDenominator);
 
-        double millimeterValue = Float.parseFloat(millimeterEditText.getText().toString());
-        double dividerMilesimal = 25.4;
+        double numerator = Float.parseFloat(numeratorEditText.getText().toString());
+        double denominator = Float.parseFloat(denominatorEditText.getText().toString());
+//        double constOfConvert = 25.4;
 
-        double result = millimeterValue/dividerMilesimal;
+        double result = numerator/denominator;
 
         return result;
 

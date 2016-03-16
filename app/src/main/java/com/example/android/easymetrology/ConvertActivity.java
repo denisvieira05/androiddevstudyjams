@@ -35,10 +35,41 @@ public class ConvertActivity extends AppCompatActivity {
         }
 
         if(savedInstanceState == null){
-            MillimeterToInchMIlesimalContentFragment approach = new MillimeterToInchMIlesimalContentFragment();
+            Bundle params = intent.getExtras();
+            if(params != null){
+                Integer converterId = params.getInt("id");
+                FragmentTransaction ft = fm.beginTransaction();
 
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.add(R.id.activity_convert,approach).commit();
+                switch (converterId) {
+                    case 1:
+                        MillimeterToInchMIlesimalFragment converterFragment1 = new MillimeterToInchMIlesimalFragment();
+
+                        ft.add(R.id.activity_convert,converterFragment1).commit();
+                        break;
+                    case 2:
+                        InchMilesimalToMillimeterFragment converterFragment2 = new InchMilesimalToMillimeterFragment();
+
+                        ft.add(R.id.activity_convert,converterFragment2).commit();
+                        break;
+                    case 3:
+                        InchFractionalToMillimeterFragment converterFragment3 = new InchFractionalToMillimeterFragment();
+
+                        ft.add(R.id.activity_convert,converterFragment3).commit();
+                        break;
+                    case 4:
+                        InchFractionalToInchMilesimalFragment converterFragment4 = new InchFractionalToInchMilesimalFragment();
+
+                        ft.add(R.id.activity_convert,converterFragment4).commit();
+                        break;
+                    case 5:
+                        MillimeterToInchFractionalFragment converterFragment5 = new MillimeterToInchFractionalFragment();
+
+                        ft.add(R.id.activity_convert,converterFragment5).commit();
+                        break;
+                }
+
+            }
+
         }
     }
 

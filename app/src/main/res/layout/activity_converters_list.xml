@@ -42,32 +42,30 @@
 
     </ListView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        android:paddingTop="25dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
+        <!--android:paddingTop="25dp">-->
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/convert_icon2"/>
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/convert_icon2"/>-->
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Em breve mais conversões"
-            android:textAllCaps="true"
-            android:paddingTop="10dp"
-            android:textColor="#696969"
-            android:layout_marginBottom="10dp"/>
+        <!--<TextView-->
+            <!--android:id="@+id/textView2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Em breve mais conversões"-->
+            <!--android:textAllCaps="true"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:textColor="#696969"-->
+            <!--android:layout_marginBottom="10dp"/>-->
 
-    </LinearLayout>
-
-
+    <!--</LinearLayout>-->
 
 
 </LinearLayout>

@@ -23,18 +23,32 @@
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_height="wrap_content"
-                android:text="Milimetro"
+                android:text="POLEGADA FRACIONÁRIA"
                 android:textAllCaps="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="15dp"/>
 
 
             <EditText
-                android:id="@+id/valueToConvert"
+                android:id="@+id/valueToConvertNumerator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
+                android:gravity="center"
+                android:hint="Númerador da fração"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal" />
+
+
+
+            <EditText
+                android:id="@+id/valueToConvertDenominator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:hint="Denominador da fração"
                 android:gravity="center"
                 android:layout_marginBottom="20dp"
                 android:layout_gravity="center_horizontal" />
@@ -64,14 +78,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-20dp">
+            android:layout_marginTop="-10dp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:src="@drawable/millimeter_to_inch_milesimal"/>
+                android:src="@drawable/inch_fractional_to_inch_milesimal"/>
         </LinearLayout>
 
 
