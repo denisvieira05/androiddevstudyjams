@@ -26,12 +26,12 @@ public class ConvertersListActivity extends AppCompatActivity{
 
     private void populateConvertersList() {
         // Construct the data source
-        ArrayList<ConverterItem> arrayOfconverters = ConverterItem.getConverters();
+        ArrayList<MetrologyItem> arrayOfconverters = MetrologyItem.getConverters();
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,converters);
 
         // Create the adapter to convert the array to views
-        ConverterItemListAdapter adapter = new ConverterItemListAdapter(this,arrayOfconverters);
+        MetrologyItemListAdapter adapter = new MetrologyItemListAdapter(this,arrayOfconverters);
 
         // Attach the adapter to a ListView
         ListView lv = (ListView) findViewById(R.id.converters_list);
@@ -43,7 +43,7 @@ public class ConvertersListActivity extends AppCompatActivity{
                 Context context = v.getContext();
 
                 // When clicked, show a toast with the TextView text
-                ConverterItem converter = (ConverterItem) av.getItemAtPosition(position);
+                MetrologyItem converter = (MetrologyItem) av.getItemAtPosition(position);
 //                Toast.makeText(getApplicationContext(),
 //                        "Clicked on Row: " + converter.getTitle(),
 //                        Toast.LENGTH_LONG).show();

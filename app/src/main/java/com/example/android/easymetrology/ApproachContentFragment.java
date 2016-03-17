@@ -1,6 +1,7 @@
 package com.example.android.easymetrology;
 
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,10 +29,35 @@ public class ApproachContentFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                TextView resultApproach = (TextView) getView().findViewById(R.id.resultApproach);
-                float result = calcApproach();
 
-                resultApproach.setText("APROXIMAÇÃO \n"+result+"mm");
+
+                EditText valorDivisoesDoNonio = (EditText) getView().findViewById(R.id.valorDivisoesDoNonio);
+                EditText valorEscalaPrincipal = (EditText) getView().findViewById(R.id.valorEscalaPrincipal);
+
+                boolean hasValueInNonio = hasText(valorDivisoesDoNonio);
+                boolean hasValueInEscala = hasText(valorEscalaPrincipal);
+
+                if(hasValueInNonio == true &&  hasValueInEscala == true){
+
+                    TextView resultApproach = (TextView) getView().findViewById(R.id.resultApproach);
+                    float result = calcApproach(valorDivisoesDoNonio,valorEscalaPrincipal);
+
+                    resultApproach.setText("APROXIMAÇÃO \n"+result+"mm");
+
+                }else{
+                    // 1. Instantiate an AlertDialog.Builder with its constructor
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                    // 2. Chain together various setter methods to set the dialog characteristics
+                    builder.setMessage("Por favor, preencha todos os campos e tente novamente .")
+                            .setTitle("Campo Vazio");
+
+                    // 3. Get the AlertDialog from create()
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+
+
             }
         });
 
@@ -43,10 +69,7 @@ public class ApproachContentFragment extends Fragment {
 //        tv.setText("Fragmento modificado");
 //    }
 
-    public float calcApproach(){
-
-        EditText valorDivisoesDoNonio = (EditText) getView().findViewById(R.id.valorDivisoesDoNonio);
-        EditText valorEscalaPrincipal = (EditText) getView().findViewById(R.id.valorEscalaPrincipal);
+    public float calcApproach(EditText valorDivisoesDoNonio, EditText valorEscalaPrincipal){
 
         float valorDivisoes = Float.parseFloat(valorDivisoesDoNonio.getText().toString());
         float valorEscala = Float.parseFloat(valorEscalaPrincipal.getText().toString());
@@ -55,5 +78,21 @@ public class ApproachContentFragment extends Fragment {
 
         return result;
 
+    }
+
+    // check the input field has any text or not
+    // return true if it contains text otherwise false
+    public static boolean hasText(EditText editText) {
+
+        String text = editText.getText().toString().trim();
+        editText.setError(null);
+
+        // length 0 means there is no text
+        if (text.length() == 0) {
+
+            return false;
+        }
+
+        return true;
     }
 }

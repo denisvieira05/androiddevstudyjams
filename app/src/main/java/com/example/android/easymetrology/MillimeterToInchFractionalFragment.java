@@ -1,13 +1,16 @@
 package com.example.android.easymetrology;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 /**
  * Created by denisvieira on 16/03/16.
@@ -18,28 +21,49 @@ public class MillimeterToInchFractionalFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_millimeter_to_inch_fractional,null);
 
 
+
         Button button = (Button) view.findViewById(R.id.convertButton);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                TextView resultView = (TextView) getView().findViewById(R.id.result);
-                String result = calcMillimeterToInchFractional();
 
-//                DecimalFormat numberFormat = new DecimalFormat("##.###");
 
-                resultView.setText(result);
+                EditText millimeterEditText = (EditText) getView().findViewById(R.id.valueToConvert);
+
+                boolean hasValue = hasText(millimeterEditText);
+
+                if(hasValue == true){
+
+                    TextView resultView = (TextView) getView().findViewById(R.id.result);
+                    String result = calcMillimeterToInchFractional(millimeterEditText);
+
+                    resultView.setText(result);
+
+                }else{
+                    // 1. Instantiate an AlertDialog.Builder with its constructor
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                    // 2. Chain together various setter methods to set the dialog characteristics
+                    builder.setMessage("Por favor, preencha os campos e tente novamente .")
+                            .setTitle("Campo Vazio");
+
+                    // 3. Get the AlertDialog from create()
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+//
+////                DecimalFormat numberFormat = new DecimalFormat("##.###");
+
+
             }
         });
 
         return (view);
     }
 
-    public String calcMillimeterToInchFractional(){
-
-        EditText millimeterEditText = (EditText) getView().findViewById(R.id.valueToConvert);
-
+    public String calcMillimeterToInchFractional(EditText millimeterEditText){
 
         double millimeterValue = Float.parseFloat(millimeterEditText.getText().toString());
 
@@ -60,6 +84,25 @@ public class MillimeterToInchFractionalFragment extends Fragment{
 
         return result;
 
+    }
+
+
+    // check the input field has any text or not
+    // return true if it contains text otherwise false
+    public static boolean hasText(EditText editText) {
+
+        String text = editText.getText().toString().trim();
+        editText.setError(null);
+
+        Log.d("hasText: ",text);
+
+        // length 0 means there is no text
+        if (text.length() == 0) {
+
+            return false;
+        }
+
+        return true;
     }
 
     static int gcd(int a, int b)

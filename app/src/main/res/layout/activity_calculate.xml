@@ -8,6 +8,31 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragments_headers_height"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:background="@drawable/gradient_green_background"
+        android:paddingLeft="25dp"
+        android:paddingTop="25dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/calculate_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20dp"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/calculate_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

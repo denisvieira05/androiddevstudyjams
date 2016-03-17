@@ -1,14 +1,16 @@
 package com.example.android.easymetrology;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by denisvieira on 12/03/16.
@@ -22,11 +24,35 @@ public class CalculateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
 
-        if(savedInstanceState == null){
-            ApproachContentFragment approach = new ApproachContentFragment();
+        Intent intent = getIntent();
+        if(intent != null){
+            Bundle params = intent.getExtras();
+            if(params != null){
+                String title = params.getString("title");
+                String desc = params.getString("desc");
 
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.add(R.id.activity_calculate,approach).commit();
+                TextView titleCalculate = (TextView) findViewById(R.id.calculate_title);
+                TextView descCalculate = (TextView) findViewById(R.id.calculate_desc);
+
+                titleCalculate.setText(title);
+                descCalculate.setText(desc);
+            }
+        }
+
+        if(savedInstanceState == null){
+
+            Bundle params = intent.getExtras();
+            if(params != null){
+                Integer calculatorId = params.getInt("id");
+                FragmentTransaction ft = fm.beginTransaction();
+//
+                switch (calculatorId) {
+                    case 1:
+                        ApproachContentFragment calculateFragment1 = new ApproachContentFragment();
+                        ft.add(R.id.activity_calculate, calculateFragment1).commit();
+                        break;
+                }
+            }
         }
 
 //        String[] lista = new String[]("Fragment 1", "Altera Texto Fragment 1", "Fragment 2","Fragment 3");

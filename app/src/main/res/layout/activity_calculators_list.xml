@@ -34,47 +34,55 @@
 
     </LinearLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:orientation="vertical"
-        android:padding="@dimen/md_keylines"
-        android:onClick="onClickToCalculate">
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?android:attr/selectableItemBackground"-->
+        <!--android:orientation="vertical"-->
+        <!--android:padding="@dimen/md_keylines">-->
 
 
-        <ImageView
-            android:id="@+id/list_avatar"
-            android:layout_width="@dimen/avator_size"
-            android:layout_height="@dimen/avator_size"
-            android:scaleType="centerCrop"
-            android:src="@drawable/caliper" />
+        <!--<ImageView-->
+            <!--android:id="@+id/list_avatar"-->
+            <!--android:layout_width="@dimen/avator_size"-->
+            <!--android:layout_height="@dimen/avator_size"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/caliper" />-->
 
-        <TextView
-            android:id="@+id/list_title"
+        <!--<TextView-->
+            <!--android:id="@+id/list_title"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/md_keylines"-->
+            <!--android:layout_toRightOf="@+id/list_avatar"-->
+            <!--android:text="Aproximação (Sensibilidade)"-->
+            <!--android:textAppearance="?attr/textAppearanceListItem"-->
+            <!--android:textSize="@dimen/article_subheading" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/list_desc"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/list_title"-->
+            <!--android:layout_marginLeft="@dimen/md_keylines"-->
+            <!--android:layout_toRightOf="@+id/list_avatar"-->
+            <!--android:textColor="@color/medium_grey"-->
+            <!--android:ellipsize="end"-->
+            <!--android:text="Calcular a aproximação (também chamada sensibilidade) dos paquímetros"-->
+            <!--android:textAppearance="?attr/textAppearanceListItem"-->
+            <!--android:textSize="@dimen/list_body" />-->
+
+
+        <!--</RelativeLayout>-->
+
+
+        <ListView
+            android:id="@+id/calculators_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/md_keylines"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:text="Aproximação (Sensibilidade)"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/article_subheading" />
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/list_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/list_title"
-            android:layout_marginLeft="@dimen/md_keylines"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:textColor="@color/medium_grey"
-            android:ellipsize="end"
-            android:text="Calcular a aproximação (também chamada sensibilidade) dos paquímetros"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/list_body" />
-
-
-        </RelativeLayout>
+        </ListView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,7 +90,8 @@
             android:gravity="center"
             android:orientation="vertical"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            android:paddingTop="25dp">
+            android:paddingTop="20dp"
+            android:layout_marginBottom="10dp">
 
             <ImageView
                 android:layout_width="match_parent"

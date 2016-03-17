@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * Created by denisvieira on 15/03/16.
  */
-public class ConverterItemListAdapter extends ArrayAdapter<ConverterItem> {
+public class MetrologyItemListAdapter extends ArrayAdapter<MetrologyItem> {
 
     // View lookup cache
     private static class ViewHolder {
@@ -21,7 +21,7 @@ public class ConverterItemListAdapter extends ArrayAdapter<ConverterItem> {
         TextView description;
     }
 
-    public ConverterItemListAdapter(Context context, ArrayList<ConverterItem> converters) {
+    public MetrologyItemListAdapter(Context context, ArrayList<MetrologyItem> converters) {
         super(context, 0, converters);
     }
 
@@ -29,10 +29,10 @@ public class ConverterItemListAdapter extends ArrayAdapter<ConverterItem> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        ConverterItem item = getItem(position);
+        MetrologyItem item = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.converter_item_list, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.metrology_item_list, parent, false);
         }
         // Lookup view for data population
         TextView title = (TextView) convertView.findViewById(R.id.list_title);
