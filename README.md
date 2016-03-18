@@ -1,4 +1,4 @@
-# [appicon](https://raw.githubusercontent.com/fromdenisvieira/androiddevstudyjams/master/app/src/main/res/drawable/mechicon3.png) [ EasyMetrology ]
+# ![appicon](app/src/main/res/drawable/mechicon3.png) [ EasyMetrology ]
 
 APP to help students and professionals who need to use metrology artifices day-to-day. Select what you need to convert or learn new techniques and calculations.
 
