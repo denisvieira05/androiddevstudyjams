@@ -8,19 +8,21 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.android.easymetrology.adapters.MetrologyItemListAdapter;
+
 import java.util.ArrayList;
 
 /**
  * Created by denisvieira on 11/03/16.
  */
-public class CalculatorsListActivity extends AppCompatActivity {
+public class GuidesListActivity extends AppCompatActivity {
 
     public static final int CONSTANTE_TELA_2 = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.example.android.easymetrology.R.layout.activity_calculators_list);
+        setContentView(com.example.android.easymetrology.R.layout.activity_guides_list);
 //        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 //        getSupportAc        CollapsingToolbarLayout collapsingToolbar =
 //                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);tionBar().setDisplayHomeAsUpEnabled(true);
@@ -63,7 +65,7 @@ public class CalculatorsListActivity extends AppCompatActivity {
                 params.putString("title", calculator.getTitle());
                 params.putString("desc", calculator.getDescription());
 
-                Intent intentOnClick = new Intent(context, CalculateActivity.class);
+                Intent intentOnClick = new Intent(context, GuideActivity.class);
                 intentOnClick.putExtras(params);
                 startActivityForResult(intentOnClick, CONSTANTE_TELA_2);
 

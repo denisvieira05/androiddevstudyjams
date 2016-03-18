@@ -7,6 +7,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.android.easymetrology.fragments.InchFractionalToInchMilesimalFragment;
+import com.example.android.easymetrology.fragments.InchFractionalToMillimeterFragment;
+import com.example.android.easymetrology.fragments.InchMilesimalToMillimeterFragment;
+import com.example.android.easymetrology.fragments.MillimeterToInchFractionalFragment;
+import com.example.android.easymetrology.fragments.MillimeterToInchMIlesimalFragment;
+
 /**
  * Created by denisvieira on 12/03/16.
  */

@@ -21,16 +21,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/calculators"
+            android:text="Guias"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20dp"
             android:textAllCaps="true"/>
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Escolha o que deseja calcular ." />
+            android:text="Escolha o que deseja aprender ." />
 
     </LinearLayout>
 
@@ -102,7 +101,10 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em breve mais cálculos"
+                android:gravity="center"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp"
+                android:text="Em breve mais guias para você consultar e aprender ."
                 android:textAllCaps="true"
                 android:paddingTop="10dp"
                 android:textColor="#696969"/>

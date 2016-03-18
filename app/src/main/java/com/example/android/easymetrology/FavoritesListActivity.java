@@ -9,16 +9,16 @@ import android.view.View;
 /**
  * Created by denisvieira on 11/03/16.
  */
-public class LibraryListActivity extends AppCompatActivity{
+public class FavoritesListActivity extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.example.android.easymetrology.R.layout.activity_library_list);
+        setContentView(com.example.android.easymetrology.R.layout.activity_favorites_list);
     }
 
     public void onClickToCalculations(View v){
         Context context = v.getContext();
-        Intent intent = new Intent(context,CalculateActivity.class);
+        Intent intent = new Intent(context,GuideActivity.class);
         startActivity(intent);
     }
 }

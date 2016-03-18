@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Converter"
+            android:text="Conversores"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20dp"
             android:textAllCaps="true"/>
@@ -48,7 +48,7 @@
         <!--android:gravity="center"-->
         <!--android:orientation="vertical"-->
         <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
-        <!--android:paddingTop="25dp">-->
+        <!--android:paddingTop="10dp">-->
 
         <!--<ImageView-->
             <!--android:layout_width="match_parent"-->

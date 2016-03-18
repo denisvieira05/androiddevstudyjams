@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClickToCalculate(View v){
+    public void onClickToGuide(View v){
         Context context = v.getContext();
-        Intent intent = new Intent(context,CalculatorsListActivity.class);
+        Intent intent = new Intent(context,GuidesListActivity.class);
         startActivity(intent);
     }
 
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickToLibrary(View v){
+    public void onClickToFavorites(View v){
         Context context = v.getContext();
-        Intent intent = new Intent(context,LibraryListActivity.class);
+        Intent intent = new Intent(context,FavoritesListActivity.class);
         startActivity(intent);
     }
 

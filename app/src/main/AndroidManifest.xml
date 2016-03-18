@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalculatorsListActivity"
+            android:name=".GuidesListActivity"
             android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -33,15 +33,15 @@
                 android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name=".LibraryListActivity"
+            android:name=".FavoritesListActivity"
             android:parentActivityName="com.example.android.easymetrology.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.easymetrology.MainActivity" />
         </activity>
         <activity
-            android:name=".CalculateActivity"
-            android:parentActivityName="com.example.android.easymetrology.CalculatorsListActivity">
+            android:name=".GuideActivity"
+            android:parentActivityName=".GuidesListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.easymetrology.MainActivity" />

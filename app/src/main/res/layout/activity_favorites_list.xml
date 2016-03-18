@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Minha Biblioteca"
+            android:text="Meus Favoritos"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20dp"
             android:textAllCaps="true"/>
@@ -30,7 +30,8 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculos e Medições Salvas" />
+            android:paddingRight="10dp"
+            android:text="Seus guias e resultados de conversões mais necessários" />
 
     </LinearLayout>
 
@@ -49,10 +50,9 @@
             android:src="@drawable/library_icon"/>
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Em breve uma função para guardar seus calculos e conversões"
+            android:text="Em breve uma função para guardar seus guias e resultados de conversões mais necessários."
             android:textAllCaps="true"
             android:gravity="center"
             android:paddingTop="10dp"

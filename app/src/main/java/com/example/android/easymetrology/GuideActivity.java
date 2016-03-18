@@ -12,17 +12,19 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.android.easymetrology.fragments.ApproachContentFragment;
+
 /**
  * Created by denisvieira on 12/03/16.
  */
-public class CalculateActivity extends AppCompatActivity {
+public class GuideActivity extends AppCompatActivity {
 
     FragmentManager fm = getSupportFragmentManager();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculate);
+        setContentView(R.layout.activity_guide);
 
         Intent intent = getIntent();
         if(intent != null){

@@ -1,4 +1,4 @@
-package com.example.android.easymetrology;
+package com.example.android.easymetrology.fragments;
 
 
 import android.app.AlertDialog;
@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.android.easymetrology.R;
 
 /**
  * Created by denisvieira on 12/03/16.

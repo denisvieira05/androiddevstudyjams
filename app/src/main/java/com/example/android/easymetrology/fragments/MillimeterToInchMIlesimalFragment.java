@@ -1,9 +1,8 @@
-package com.example.android.easymetrology;
+package com.example.android.easymetrology.fragments;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.android.easymetrology.R;
+
+import java.text.DecimalFormat;
 
 /**
- * Created by denisvieira on 16/03/16.
+ * Created by denisvieira on 13/03/16.
  */
-public class MillimeterToInchFractionalFragment extends Fragment{
+public class MillimeterToInchMIlesimalFragment extends Fragment {
+
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstaceState){
-        View view = inflater.inflate(R.layout.fragment_millimeter_to_inch_fractional,null);
-
+        View view = inflater.inflate(R.layout.fragment_millimeter_to_inch_milesimal,null);
 
 
         Button button = (Button) view.findViewById(R.id.convertButton);
@@ -28,18 +30,17 @@ public class MillimeterToInchFractionalFragment extends Fragment{
             @Override
             public void onClick(View v)
             {
-
-
                 EditText millimeterEditText = (EditText) getView().findViewById(R.id.valueToConvert);
-
                 boolean hasValue = hasText(millimeterEditText);
 
                 if(hasValue == true){
 
                     TextView resultView = (TextView) getView().findViewById(R.id.result);
-                    String result = calcMillimeterToInchFractional(millimeterEditText);
+                    double result = calcMillimeterToInchMIlesimal(millimeterEditText);
 
-                    resultView.setText(result);
+                    DecimalFormat numberFormat = new DecimalFormat("##.###");
+
+                    resultView.setText(numberFormat.format(result)+"''");
 
                 }else{
                     // 1. Instantiate an AlertDialog.Builder with its constructor
@@ -53,9 +54,6 @@ public class MillimeterToInchFractionalFragment extends Fragment{
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
-//
-////                DecimalFormat numberFormat = new DecimalFormat("##.###");
-
 
             }
         });
@@ -63,38 +61,12 @@ public class MillimeterToInchFractionalFragment extends Fragment{
         return (view);
     }
 
-    public String calcMillimeterToInchFractional(EditText millimeterEditText){
-
-        double millimeterValue = Float.parseFloat(millimeterEditText.getText().toString());
-
-        double constToConvert = 5.04;
-
-        double multiplicationResult = millimeterValue*constToConvert;
-
-        float millimeterValueMultiplied = (float) multiplicationResult;
-
-        int millimeterValueRounded = Math.round(millimeterValueMultiplied);
-
-        int gcd = gcd(millimeterValueRounded, 128);
-
-        int numerator = millimeterValueRounded/gcd;
-        int denominator = 128/gcd;
-
-        String result = numerator+"''\n___\n"+denominator;
-
-        return result;
-
-    }
-
-
     // check the input field has any text or not
     // return true if it contains text otherwise false
     public static boolean hasText(EditText editText) {
 
         String text = editText.getText().toString().trim();
         editText.setError(null);
-
-        Log.d("hasText: ",text);
 
         // length 0 means there is no text
         if (text.length() == 0) {
@@ -105,14 +77,14 @@ public class MillimeterToInchFractionalFragment extends Fragment{
         return true;
     }
 
-    static int gcd(int a, int b)
-    {
-        while(a!=0 && b!=0) // until either one of them is 0
-        {
-            int c = b;
-            b = a%b;
-            a = c;
-        }
-        return a+b; // either one is 0, so return the non-zero value
+    public double calcMillimeterToInchMIlesimal(EditText millimeterEditText){
+
+        double millimeterValue = Float.parseFloat(millimeterEditText.getText().toString());
+        double dividerMilesimal = 25.4;
+
+        double result = millimeterValue/dividerMilesimal;
+
+        return result;
+
     }
 }

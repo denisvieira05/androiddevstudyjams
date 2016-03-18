@@ -1,4 +1,4 @@
-package com.example.android.easymetrology;
+package com.example.android.easymetrology.fragments;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -11,16 +11,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.android.easymetrology.R;
+
 import java.text.DecimalFormat;
 
 /**
  * Created by denisvieira on 16/03/16.
  */
-public class InchFractionalToMillimeterFragment extends Fragment{
+public class InchMilesimalToMillimeterFragment extends Fragment{
+
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstaceState){
-        View view = inflater.inflate(R.layout.fragment_inch_fractional_to_millimeter,null);
+        View view = inflater.inflate(R.layout.fragment_inch_milesimal_to_millimeter,null);
 
+//        TextView textv = (TextView) view.findViewById(R.id.textViewCaliperRule);
+//        textv.setText("Frament TESTE");
 
         Button button = (Button) view.findViewById(R.id.convertButton);
         button.setOnClickListener(new View.OnClickListener()
@@ -29,16 +34,14 @@ public class InchFractionalToMillimeterFragment extends Fragment{
             public void onClick(View v)
             {
 
-                EditText numeratorEditText = (EditText) getView().findViewById(R.id.valueToConvertNumerator);
-                EditText denominatorEditText = (EditText) getView().findViewById(R.id.valueToConvertDenominator);
+                EditText millimeterEditText = (EditText) getView().findViewById(R.id.valueToConvert);
 
-                boolean hasValueInNumerator = hasText(numeratorEditText);
-                boolean hasValueInDenominator = hasText(denominatorEditText);
+                boolean hasValue = hasText(millimeterEditText);
 
-                if(hasValueInNumerator == true &&  hasValueInDenominator == true){
+                if(hasValue == true){
 
                     TextView resultView = (TextView) getView().findViewById(R.id.result);
-                    double result = calcInchFractionalToMillimeter(numeratorEditText,denominatorEditText);
+                    double result = calcInchMIlesimalToMillimeter(millimeterEditText);
 
                     DecimalFormat numberFormat = new DecimalFormat("##.###");
 
@@ -49,18 +52,13 @@ public class InchFractionalToMillimeterFragment extends Fragment{
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
                     // 2. Chain together various setter methods to set the dialog characteristics
-                    builder.setMessage("Por favor, preencha todos os campos e tente novamente .")
+                    builder.setMessage("Por favor, preencha os campos e tente novamente .")
                             .setTitle("Campo Vazio");
 
                     // 3. Get the AlertDialog from create()
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
-
-
-
-
-
             }
         });
 
@@ -85,13 +83,12 @@ public class InchFractionalToMillimeterFragment extends Fragment{
         return true;
     }
 
-    public double calcInchFractionalToMillimeter(EditText numeratorEditText, EditText denominatorEditText){
+    public double calcInchMIlesimalToMillimeter(EditText millimeterEditText){
 
-        double numerator = Float.parseFloat(numeratorEditText.getText().toString());
-        double denominator = Float.parseFloat(denominatorEditText.getText().toString());
-        double constOfConvert = 25.4;
+        double millimeterValue = Float.parseFloat(millimeterEditText.getText().toString());
+        double constOfOperation = 25.4;
 
-        double result = (numerator*constOfConvert)/denominator;
+        double result = millimeterValue*constOfOperation;
 
         return result;
 

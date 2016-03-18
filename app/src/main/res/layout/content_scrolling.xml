@@ -56,9 +56,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:text="CALCULAR"
+                android:text="GUIAS"
                 android:textColor="#2E7D32"
-                android:onClick="onClickToCalculate"/>
+                android:onClick="onClickToGuide"/>
 
 
             <Button
@@ -77,8 +77,8 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:textColor="#2E7D32"
-            android:text="Minha Biblioteca"
-            android:onClick="onClickToLibrary"/>
+            android:text="Meus Favoritos"
+            android:onClick="onClickToFavorites"/>
 
     </LinearLayout>
 
