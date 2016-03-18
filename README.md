@@ -1,4 +1,4 @@
-# ![appicon](app/src/main/res/drawable/mechicon3.png) [ EasyMetrology ]
+# [ EasyMetrology ]
 
 APP to help students and professionals who need to use metrology artifices day-to-day. Select what you need to convert or learn new techniques and calculations.
 
